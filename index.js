@@ -73,7 +73,7 @@ switch (opcion) {
     case "1":
       let continuar = true;
         
-      while(continuar) {
+      do {
         let nombreProducto;
         let existe;
 
@@ -92,17 +92,17 @@ switch (opcion) {
         alert(`Producto "${nombreProducto}" agregado con ID ${id}.`);
 
         let respuesta = prompt("¿Desea agregar otro producto? (1=si/ 2=no)");
-
-        if (respuesta == "1"){
+       
+        if (respuesta === "1"){
           continuar = true;
         }
         else{
           continuar = false;
         }
 
-        break;
+        
 
-      } 
+      } while(continuar)
         
 
     case "2":
