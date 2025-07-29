@@ -68,47 +68,50 @@ if (!usuarioExiste(userID)) {
 let opcion = prompt("¿Qué desea hacer?\ 1. Agregar un nuevo producto\ 2. Salir");
 
 
+
 switch (opcion) {
     case "1":
-        let continuar = true;
+      let continuar = true;
+        
+      do {
+        let nombreProducto;
+        let existe;
 
-        while(continuar = true) {
-            let nombreProducto;
-            let existe;
+        do {
+          nombreProducto = prompt("Ingrese el nombre del producto:");
+          existe = existeProducto(nombreProducto);
+          if (existe) {
+            alert("Este producto ya existe. Ingrese otro nombre.");
+          }
+        } while (existe);
+        
+        let  precio = prompt("Ingrese el precio en COP:");
 
-            do {
-                nombreProducto = prompt("Ingrese el nombre del producto:");
-                existe = existeProducto(nombreProducto);
-                if (existe) {
-                alert("Este producto ya existe. Ingrese otro nombre.");
-                }
-            } while (existe);
-            let  precio = prompt("Ingrese el precio en COP:");
+        const id = productos.length + 1;
+        productos.push({ id, nombre: nombreProducto, precio });
+        alert(`Producto "${nombreProducto}" agregado con ID ${id}.`);
+
+        let respuesta = prompt("¿Desea agregar otro producto? (1=si/ 2=no)");
+       
+        if (respuesta === "1"){
+          continuar = true;
+        }
+        else{
+          continuar = false;
+        }
+
         
 
-            const id = productos.length + 1;
-            productos.push({ id, nombre: nombreProducto, precio });
-            alert(`Producto "${nombreProducto}" agregado con ID ${id}.`);
+      } while(continuar)
+        
 
-            let respuesta = prompt("¿Desea agregar otro producto? (1=si/ 2=no)");
-            if (respuesta === "1"){
-                continuar = true;
-            }
-            else{
-                continuar = false;
-            }
-
-        } 
-
-      case "2":
-        alert("Gracias! Hasta luego.");
-        break;
+    case "2":
+      alert("Gracias! Hasta luego.");
+      break;
   }
 
   
 console.log("Lista actual de productos:");
 for (let i = 0; i < productos.length; i++) {
     console.log(`ID: ${productos[i].id} - Nombre: ${productos[i].nombre} - Precio: ${productos[i].precio} COP`);
-}      
-        
-     
+}
