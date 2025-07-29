@@ -114,6 +114,4 @@ switch (opcion) {
 console.log("Lista actual de productos:");
 for (let i = 0; i < productos.length; i++) {
     console.log(`ID: ${productos[i].id} - Nombre: ${productos[i].nombre} - Precio: ${productos[i].precio} COP`);
-}      
-        
-     
+}
