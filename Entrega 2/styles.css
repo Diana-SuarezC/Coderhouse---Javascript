@@ -1,0 +1,25 @@
+.timezone{
+  margin: 5rem;
+  justify-items: center;
+}
+
+
+#zonaHoraria {
+      font-size: 1.2em;
+      padding: 8px 12px;
+      margin-bottom: 20px;
+      color: rgb(206, 22, 62);
+      border: 1px solid rgb(23, 21, 21);
+      border-radius: 5px;
+      margin-left: 42%;
+    
+}
+
+#reloj {
+  font-size: 3em;
+  border: 2px solid rgb(206, 22, 62);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(206, 22, 62);
+  margin-top: 2rem;
+}
